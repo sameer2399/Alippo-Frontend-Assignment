@@ -5,8 +5,6 @@ import styles from "./DataTable.module.css";
 
 type ModalOpen = "Edit" | "Delete" | false;
 
-
-
 interface ModalActionProps  {
   index: number;
   modal: ModalOpen;
@@ -37,7 +35,6 @@ return <Modal open={!!modal}>
     <p className={styles.modalHeader}>
       {modal === "Edit" ? "Edit Name" : "Delete " + (index + 1)}
     </p>
-    <p>{data.name}{index}</p>
     <form onSubmit={handleSubmit}>
       {modal === "Edit" ? (
         <input
