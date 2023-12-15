@@ -7,9 +7,11 @@ type Props = {
 }
 
 function Modal({children, open = false}: Props) {
+
+  
     if(!open) return null
   return (
-    <div className={styles.modal}>
+    <div  className={styles.modal}>
         <div className={styles.content} >
             {children}
         </div>

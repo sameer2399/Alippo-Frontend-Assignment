@@ -1,38 +1,41 @@
-import React from 'react'
-import { useDataContext } from '../../context/DataContext'
-import TableAction from './TableAction';
+import React from "react";
+import { useDataContext } from "../../context/DataContext";
+import TableAction from "./TableAction";
+import styles from "./DataTable.module.css";
+
+const tableHeader = ["SL NO.", "Name", "Age", "City", "Pin Code", "Actions"];
 
 function DataTable() {
-  const { data, loading} = useDataContext();
+  const { data, loading } = useDataContext();
+  console.log(data, loading);
 
   return (
     <div>
-      <table>
-        <thead>
+      <table className={styles.table}>
+        <thead className={styles.tableHeading}>
           <tr>
-            <th>SL no.</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>City</th>
-            <th>Pin Code</th>
-            <th>Actions</th>
+            {tableHeader.map((item, index) => (
+              <th className={styles.tableHeader} key={index}>{item}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => <tr key={index}>
-            <td>{index+1}</td>
-            <td>{item.name || "-"}</td>
-            <td>{item.age || "-"}</td>
-            <td>{item.city || "-"}</td>
-            <td>{item.pinCode || "-"}</td>
-            <td>
-              <TableAction data={item} index={index}/>
-            </td>
-          </tr>)}
+          {data.map((item, index) => (
+            <tr className={styles.tableHeader} key={index}>
+              <td className={styles.tableData}>{index + 1}</td>
+              <td className={styles.tableData}>{item.name || "-"}</td>
+              <td className={styles.tableData}>{item.age || "-"}</td>
+              <td className={styles.tableData}>{item.city || "-"}</td>
+              <td className={styles.tableData}>{item.pinCode || "-"}</td>
+              <td className={styles.tableData}>
+                <TableAction data={item} index={index} />
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
-export default DataTable
+export default DataTable;
