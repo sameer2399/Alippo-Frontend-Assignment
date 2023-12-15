@@ -13,7 +13,7 @@ function DataTable() {
   if (loading) {
     return <Shimmer />;
   }
-  
+
   return (
     <div>
       <table className={styles.table}>
