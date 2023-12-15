@@ -47,8 +47,11 @@ npm install axios
 `Key Features:`
 
 Promise-based: Axios uses Promises, making it convenient for handling asynchronous operations.
+
 HTTP Methods: Supports a variety of HTTP methods, including GET, POST, PUT, DELETE, etc.
+
 Interceptors: Allows you to intercept requests or responses before they are handled by .then() or .catch().
+
 Global Configurations: Provides options for setting global configurations such as headers, timeout, and more.
 
 
