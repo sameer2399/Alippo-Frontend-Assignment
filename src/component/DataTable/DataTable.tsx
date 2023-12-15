@@ -1,9 +1,9 @@
 import React from 'react'
-import { IDataItem, useDataContext } from '../../context/DataContext'
+import { useDataContext } from '../../context/DataContext'
 import TableAction from './TableAction';
 
 function DataTable() {
-  const { data, loading, editData, deleteData } = useDataContext();
+  const { data, loading} = useDataContext();
 
   return (
     <div>
@@ -26,7 +26,7 @@ function DataTable() {
             <td>{item.city || "-"}</td>
             <td>{item.pinCode || "-"}</td>
             <td>
-              <TableAction data={item}/>
+              <TableAction data={item} index={index}/>
             </td>
           </tr>)}
         </tbody>
