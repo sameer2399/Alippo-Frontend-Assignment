@@ -25,26 +25,35 @@ function TableAction({ data, index }: Props) {
 
   return (
     <div>
-      <button className={styles.buttonEdit} onClick={(e) => setModal("Edit")}>Edit</button>
-      <button className={styles.buttonDelete} onClick={(e) => setModal("Delete")}>Delete</button>
+      <button className={styles.buttonEdit} onClick={(e) => setModal("Edit")}>
+        Edit
+      </button>
+      <button
+        className={styles.buttonDelete}
+        onClick={(e) => setModal("Delete")}
+      >
+        Delete
+      </button>
 
       <Modal open={!!modal}>
         <div className={styles.modal}>
           <p className={styles.modalHeader}>
-            {modal === "Edit" ? "Edit Name" : "Delete " + (index + 1)} 
+            {modal === "Edit" ? "Edit Name" : "Delete " + (index + 1)}
           </p>
           <form onSubmit={handleSubmit}>
             {modal === "Edit" ? (
               <input
-              className={styles.modalInput}
+                className={styles.modalInput}
                 type="text"
                 value={val}
                 onChange={(e) => setVal(e.target.value)}
               />
             ) : null}
-            <div>
-              <button className={styles.buttonDelete}  onClick={() => setModal(false)}>Cancel</button>
-              <button className={styles.buttonEdit} type="submit">
+            <div className={styles.modalButtons}>
+              <button className={styles.delete} onClick={() => setModal(false)}>
+                Cancel
+              </button>
+              <button className={styles.edit} type="submit">
                 {modal === "Edit" ? "Save" : "Confirm"}{" "}
               </button>
             </div>
