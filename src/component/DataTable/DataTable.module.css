@@ -155,3 +155,13 @@
     margin-left: 24vw;
   }
 }
+@media screen and (max-width: 900px) {
+  .modal {
+    width: 80vw;
+  }
+  .modalButtons {
+    margin-top: 14px;
+    width: 20vw;
+    margin-left: 50vw;
+  }
+}
